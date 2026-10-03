@@ -35,10 +35,9 @@ head(visitors)
 
 ```{r Ex_a}
 # Delete the comment '#' symbol at the start of the next line and complete the code. 
+visitors %>% count(region)
 
-#visitors %>% count(_____)
 ```
-
 ### Exercise b.
 
 *Create a frequency table by `admission` and `setting`.*
@@ -47,7 +46,10 @@ head(visitors)
 # Delete the comment '#' symbol at the start of the next line and complete the code.
 
 #visitors %>% count(_____, _____)
+visitors %>% count(admission,setting)
 ```
+
+
 
 ## Question 2
 
@@ -59,10 +61,12 @@ class(visitors$n_2022)
 
 
 
-```
+```nrow(visitors) 
+
 
 ```{r Q2_part2}
 visitors %>% summarise_all(class)
+
 ```
 
 ## Question 3
@@ -81,6 +85,8 @@ visitors %>% arrange(desc(n_2022))
 #visitors %>% 
 #  arrange(____(____)) %>%
 #  head(n = ____)
+visitors %>%
+  arrange(desc(n_2021))
 ```
 
 ## Question 4
@@ -97,6 +103,7 @@ visitors %>% filter(attraction == "National Museum of Scotland")
 
 ```{r Ex_d}
 #visitors %>% filter(___ == ____)
+visitors %>% filter(n_2022==565772)
 ```
 
 ### Exercise e.
